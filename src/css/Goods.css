@@ -1,0 +1,9 @@
+.goods {display:flex;margin: 10px 0 10px 0; border-radius:20px;border: 1px solid gray;padding:10px 0 0 10px; font-size: 14px;}
+.details {flex:1;}
+.details>p {margin-bottom: 5px;}
+.goods_line {display: flex;}
+.goods_img {margin:0 10px 0 10px;}
+.goodscount {width:40px;height:20px;border: 1px solid gray; text-align: center; color:gray;}
+.minus, .plus {width:20px;height:20px;border: 1px solid gray;color:gray;text-align: center;}
+.price {flex:1;}
+.goodsnumber {width: 107px;display:flex}

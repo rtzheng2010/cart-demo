@@ -1,0 +1,4 @@
+.header {/*position: fixed;*/top:0;width: 100%;}
+.hcontainer {display: flex;justify-content:center;height: 44px;}
+.back,.menu {height: 44px;line-height: 44px;}
+.title {flex:1;height:44px;line-height: 44px;text-align: center;}
