@@ -56,7 +56,7 @@ export default class Cart extends Component {
     goodsStorage=localStorage.getItem("goods");
     goodsStorage=JSON.parse(goodsStorage);*/
     fetch(
-      'http://localhost:3000/goods'
+      'http://localhost:3001/goods'
     )
       .then(res => res.json())
       .then(data => {

@@ -9,15 +9,22 @@ export default class Goodslist extends Component {
     constructor(props) {
         super(props);
         let {goods} = this.props;
+        let countArray=[];
+        for(let i=0;i<goods.length;i++) {
+            countArray.push(goods[i].count);
+        }
+        //console.log(countArray);
         this.state = {
             totalChecked: false,
             checked: Array(goods.length).fill(false),
-            count:Array(goods.length).fill(1),
+            //count:Array(goods.length).fill(goods[0].count),
+            count: countArray,
             totalCount: 0,
             totalPrice: 0,
         }
         
     }
+    
 
     totalChecked() {
         let {totalChecked,totalPrice,totalCount}=this.state;
@@ -135,7 +142,7 @@ export default class Goodslist extends Component {
         else
         return <div>
             {goods.map((good,index) =>
-                <Goods name={good.name} price={good.price} weight={good.weight} key={good.name} onClick={() => this.toggleChecked(index)} checked={this.state.checked[index]} count={this.state.count[index] }
+                <Goods name={good.name} price={good.price} weight={good.weight} key={good.name} onClick={() => this.toggleChecked(index)} checked={this.state.checked[index]} count={this.state.count[index]  }
                 minus={() => this.handleMinus(index)} 
                 plus={() => this.handlePlus(index)} 
                 deleteGoods={() => this.props.deleteGoods(index)}
@@ -151,7 +158,7 @@ export default class Goodslist extends Component {
             <div className="goodslist">
                 {this.renderSideBar()}
                 <Footer goods={goods} totalChecked={this.state.totalChecked} onClick={() => this.totalChecked()} checked={this.state.checked}
-                totalPrice={this.state.totalPrice} totalCount={this.state.totalCount}/>
+                totalPrice={this.state.totalPrice} totalCount={this.state.totalCount} count={this.state.count}/>
             </div>
         );
     }
